@@ -1,0 +1,14 @@
+{
+  "name": "rental-cars-e2e",
+  "version": "1.0.0",
+  "description": "Testes E2E com Playwright para Rental Cars (Spring API + Angular Web)",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --ui",
+    "test:headed": "npx playwright test --headed",
+    "report": "npx playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0"
+  }
+}
