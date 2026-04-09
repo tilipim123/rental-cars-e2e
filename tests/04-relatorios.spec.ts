@@ -85,18 +85,18 @@ test.describe('Tela Relatórios - Listagem e Filtros', () => {
     }
   });
 
-  test('deve exibir tag SIM/NAO para status de pagamento', async ({ page }) => {
+  test('deve exibir tag SIM/NÃO para status de pagamento', async ({ page }) => {
     const tags = page.locator('.p-datatable-tbody .p-tag');
     await expect(tags.first()).toBeVisible({ timeout: 10000 });
 
     const count = await tags.count();
     for (let i = 0; i < count; i++) {
       const text = await tags.nth(i).textContent();
-      expect(['SIM', 'NAO']).toContain(text?.trim());
+      expect(['SIM', 'NÃO']).toContain(text?.trim());
     }
   });
 
-  test('tag SIM deve ser verde e NAO deve ser vermelha', async ({ page }) => {
+  test('tag SIM deve ser verde e NÃO deve ser vermelha', async ({ page }) => {
     const tags = page.locator('.p-datatable-tbody .p-tag');
     await expect(tags.first()).toBeVisible({ timeout: 10000 });
 
@@ -108,7 +108,7 @@ test.describe('Tela Relatórios - Listagem e Filtros', () => {
 
       if (text?.trim() === 'SIM') {
         expect(classes).toContain('success');
-      } else if (text?.trim() === 'NAO') {
+      } else if (text?.trim() === 'NÃO') {
         expect(classes).toContain('danger');
       }
     }
