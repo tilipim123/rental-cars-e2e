@@ -7,14 +7,14 @@ test.describe('Navegação e Layout', () => {
     await expect(page).toHaveURL(/\/alugueis/);
   });
 
-  test('deve exibir o header com LOGO, nome do usuário e Sair', async ({ page }) => {
+  test('deve exibir o header com LOGO, avatar e link Sair', async ({ page }) => {
     await page.goto('/');
     const header = page.locator('.layout-topbar');
     await expect(header).toBeVisible();
     await expect(header.locator('text=LOGO')).toBeVisible();
-    await expect(header.locator('text=Sandra Rosa Madalena')).toBeVisible();
     await expect(header.locator('p-avatar')).toBeVisible();
-    await expect(header.locator('text=Sair')).toBeVisible();
+    await expect(header.locator('a.sair-link')).toBeVisible();
+    await expect(header.locator('a.sair-link')).toHaveText('Sair');
   });
 
   test('deve exibir o menu lateral com itens Alugueis e Relatórios', async ({ page }) => {
